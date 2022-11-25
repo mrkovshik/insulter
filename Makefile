@@ -2,6 +2,9 @@ GO=go
 export GOPRIVATE=gitlab.com/tabby.ai/*
 TARGET_DIR?=$(PWD)/.build
 M=$(shell printf "\033[34;1m>>\033[0m")
+PROTO_DIR=grpc/proto
+PROTO=$(PROTO_DIR)/calculus.proto
+PACKAGE=gitlab.com/tabby.ai/testing/tools/calculus
 
 
 .PHONY: build
@@ -13,10 +16,17 @@ build:
 run: build 
 	$(TARGET_DIR)/service
 
+.PHONY: generate
+generate:
+	protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative,require_unimplemented_servers=false $(PROTO)
+
+.PHONY: generate-mock
+generate-mock: generate
+	mockgen $(PACKAGE)/$(PROTO_DIR) CalculusClient >> $(PROTO_DIR)/mock/mock_calculus.go
 
 .PHONY: evans
 evans:
-	evans grpc/proto/calculus.proto -p 8080
+	evans $(PROTO) -p 8080
 
 .PHONY: tidy
 tidy:

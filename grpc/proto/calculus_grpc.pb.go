@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.9
-// source: calculus.proto
+// source: grpc/proto/calculus.proto
 
 package proto
 
@@ -99,5 +99,5 @@ var Calculus_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "calculus.proto",
+	Metadata: "grpc/proto/calculus.proto",
 }
