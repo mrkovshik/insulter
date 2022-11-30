@@ -5,13 +5,13 @@ package Insulter;
 option go_package = "Insulter/grpc/proto";
 
 service insulter {
-    rpc Insult(Value) returns (Value) {}
+    rpc Insult(Value_IN) returns (Value_OUT) {}
  }
 
-message Value {
+message Value_IN {
     string value = 1;
 }
 
-message Value {
+message Value_OUT {
    string value = 2;
 }

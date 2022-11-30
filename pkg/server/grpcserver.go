@@ -1,7 +1,7 @@
-package calculus
+package insulter
 
 import (
-	"gitlab.com/tabby.ai/testing/tools/calculus/grpc/proto"
+	"github.com/mrkovshik/Insulter/culus/grpc/proto"
 	"context"
 )
 
