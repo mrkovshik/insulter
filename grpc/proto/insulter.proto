@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Insulter;
+
+option go_package = "Insulter/grpc/proto";
+
+service insulter {
+    rpc Insult(Value) returns (Value) {}
+ }
+
+message Value {
+    string value = 1;
+}
+
+message Value {
+   string value = 2;
+}

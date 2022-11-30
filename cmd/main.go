@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gitlab.com/tabby.ai/testing/tools/calculus/grpc/proto"
-	"gitlab.com/tabby.ai/testing/tools/calculus/pkg/server"
+	"github.com/mrkovshik/Insulter/grpc/proto"
+
 	"log"
 	"net"
 
@@ -15,7 +15,7 @@ func main() {
     s := grpc.NewServer()
 
     // Put function that return Fibonacci
-    srv := &calculus.GRPCServer{
+    srv := &Insulter.GRPCServer{
         FibonacciImplementation: calculus.Fibonacci(),
     }
 
