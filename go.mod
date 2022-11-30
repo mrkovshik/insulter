@@ -1,4 +1,4 @@
-module gitlab.com/tabby.ai/testing/tools/calculus
+module github.com/mrkovshik/insulter
 
 go 1.19
 

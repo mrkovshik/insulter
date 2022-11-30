@@ -6,12 +6,12 @@ import (
 )
 
 type GRPCServer struct{
-	FibonacciImplementation func() int
+	InsulterImplementation func() int
 }
 
 // Add method for return next Fibonacci
-func (s *GRPCServer) Fibonacci(ctx context.Context, req *proto.Empty) (*proto.Value, error) {
+func (s *GRPCServer) Insult(ctx context.Context, req *proto.Value) (*proto.Value, error) {
 	return &proto.Value{
-		Value: int32(s.FibonacciImplementation()),
+		Value: int32(s.InsulterImplementation()),
 	}, nil
 }
