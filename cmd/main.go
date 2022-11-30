@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/mrkovshik/Insulter/grpc/proto"
+	"github.com/mrkovshik/insulter/grpc/proto"
 
 	"log"
 	"net"
@@ -15,12 +15,12 @@ func main() {
     s := grpc.NewServer()
 
     // Put function that return Fibonacci
-    srv := &Insulter.GRPCServer{
-        FibonacciImplementation: calculus.Fibonacci(),
+    srv := &insulter.GRPCServer{
+        insulterImplementation: insulter.Insult(),
     }
 
     // Register gRPC server for handle
-    proto.RegisterCalculusServer(s, srv)
+    proto.RegisterInsulterServer(s, srv)
 
     // Listen on port 8080
     l, err := net.Listen("tcp", ":8080")

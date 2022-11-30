@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package Insulter;
+package insulter;
 
-option go_package = "Insulter/grpc/proto";
+option go_package = "insulter/grpc/proto";
 
 service insulter {
-    rpc Insult(Value) returns (Value) {}
+    rpc insult(Value) returns (Value) {}
  }
 
 message Value {

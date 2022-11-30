@@ -1,17 +1,17 @@
-package calculus
+package insulter
 
 import (
-	"gitlab.com/tabby.ai/testing/tools/calculus/grpc/proto"
+	"github.com/mrkovshik/insulter/grpc/proto"
 	"context"
 )
 
 type GRPCServer struct{
-	FibonacciImplementation func() int
+	InsulterImplementation func() int
 }
 
 // Add method for return next Fibonacci
-func (s *GRPCServer) Fibonacci(ctx context.Context, req *proto.Empty) (*proto.Value, error) {
+func (s *GRPCServer) Insult(ctx context.Context, req *proto.Value) (*proto.Value, error) {
 	return &proto.Value{
-		Value: int32(s.FibonacciImplementation()),
+		Value: int32(s.InsulterImplementation()),
 	}, nil
 }
