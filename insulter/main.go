@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-mux:= http.NewServeMux()
-mux.HandleFunc("/name/", Insult)
-mux.HandleFunc("/age/", deathClocker)
+	mux:= http.NewServeMux()
+	mux.HandleFunc("/name/", Insult)
+	mux.HandleFunc("/age/", deathClocker)
 
-	 log.Fatal(http.ListenAndServe(":5000", mux))
+	log.Fatal(http.ListenAndServe(":5000", mux))
 }
