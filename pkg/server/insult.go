@@ -11,7 +11,7 @@ func pickWord(x []string) string {
 	return x[rand.Intn(len(x))]
 }
 
-func Insult(name string) string {
+func insult(name string) string {
 	list := []string{
 		"Handsome guy",
 		"Fool",
@@ -23,6 +23,6 @@ func Insult(name string) string {
 		"Just a regular normal motherfucker",
 	}
 	swear:= pickWord(list)
-	answer:= "Who is "+ name+ "today?"+name+"is a"+ swear+ "today!"
+	answer:= "Who is "+ name+ " today? "+name+" is a "+ swear+ " today!"
 return answer
 }

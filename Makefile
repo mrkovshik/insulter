@@ -1,10 +1,12 @@
 GO=go
 export GOPRIVATE=gitlab.com/tabby.ai/*
+#export PATH=$(go env GOPATH)/bin:$(PATH)
 TARGET_DIR?=$(PWD)/.build
 M=$(shell printf "\033[34;1m>>\033[0m")
 PROTO_DIR=grpc/proto
-PROTO=$(PROTO_DIR)/calculus.proto
+PROTO=$(PROTO_DIR)/insulter.proto
 PACKAGE=gitlab.com/tabby.ai/testing/tools/calculus
+
 
 
 .PHONY: build
