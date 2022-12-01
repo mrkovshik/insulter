@@ -1,17 +1,17 @@
 package insulter
 
 import (
-	"github.com/mrkovshik/Insulter/culus/grpc/proto"
+	"github.com/mrkovshik/Insulter/grpc/proto"
 	"context"
 )
 
 type GRPCServer struct{
-	InsulterImplementation func() int
+	InsulterImplementation func(string) string
 }
 
-// Add method for return next Fibonacci
-func (s *GRPCServer) Insult(ctx context.Context, req *proto.Value) (*proto.Value, error) {
-	return &proto.Value{
-		Value: int32(s.InsulterImplementation()),
+
+func (s *GRPCServer) Insult(ctx context.Context, req *proto.Value_IN) (*proto.Value_OUT, error) {
+	return &proto.Value_OUT{
+		Value_OUT: string(s.InsulterImplementation(proto.Value_IN)),
 	}, nil
 }

@@ -1,4 +1,4 @@
-module github.com/mrkovshik/insulter
+module github.com/mrkovshik/Insulter
 
 go 1.19
 

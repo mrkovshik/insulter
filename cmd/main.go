@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/mrkovshik/insulter/grpc/proto"
+	"github.com/mrkovshik/Insulter/grpc/proto"
 
 	"log"
 	"net"
@@ -15,8 +15,8 @@ func main() {
     s := grpc.NewServer()
 
     // Put function that return Fibonacci
-    srv := &insulter.GRPCServer{
-        insulterImplementation: insulter.Insult(),
+    srv := &Insulter.GRPCServer{
+        InsulterImplementation: Insulter.Insult(),
     }
 
     // Register gRPC server for handle
