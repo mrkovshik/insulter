@@ -1,12 +1,14 @@
-module github.com/mrkovshik/Insulter_client
+module Insulter_client
 
 go 1.19
-require google.golang.org/grpc v1.50.1
 
 require (
-	github.com/golang/mock v1.6.0
+	github.com/mrkovshik/insulter v0.0.0-20221201123411-4d3f78972674
+	google.golang.org/grpc v1.51.0
+)
+
+require (
 	github.com/golang/protobuf v1.5.2 // indirect
-	gitlab.com/tabby.ai/testing/tools/calculus v0.0.1
 	golang.org/x/net v0.2.0 // indirect
 	golang.org/x/sys v0.2.0 // indirect
 	golang.org/x/text v0.4.0 // indirect
